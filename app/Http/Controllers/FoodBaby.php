@@ -10,8 +10,23 @@ class FoodBaby extends Controller
         print_r('hello world');
     }
 
-    public function category(){
-        return view('food-category', ['name' => 'James']);
+    public function category($slug){
+        print_r('hello');
+        $post = \DB::table('food_category')->where('slug', $slug)->first();
+        dd($post);
+
+        return view('food_category', [
+            'post' => $post->product_name
+        ]);
+    }
+
+    public function description(){
+        $post = \DB::table('food_category')->where('id', 1)->first();
+
+        return view('food-category', [
+            'post' => $post->product_name,
+            'description' => $post->product_description
+        ]);
     }
 
 

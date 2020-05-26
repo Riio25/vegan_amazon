@@ -22,3 +22,6 @@ Route::get('/', function () {
 Route::get('/food-checkout', 'FoodBaby@checkout' );
 
 Route::get('/food-category', 'FoodBaby@category');
+
+route::get('/post','postscontroller@show');
+Route::get('/bananas', 'FoodBaby@description');

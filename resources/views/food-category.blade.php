@@ -9,7 +9,8 @@
 </head>
 <body>
 
-<h1>Hello {{ $name }}, welcome to food categories.</h1>
+<h1>Check out these {{ $post }}!</h1>
+<div>{{ $description }}</div>
 
 </body>
 </html>
