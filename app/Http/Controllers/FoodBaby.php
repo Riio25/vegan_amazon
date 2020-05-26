@@ -13,7 +13,6 @@ class FoodBaby extends Controller
     public function category($slug){
         print_r('hello');
         $post = \DB::table('food_category')->where('slug', $slug)->first();
-        dd($post);
 
         return view('food_category', [
             'post' => $post->product_name

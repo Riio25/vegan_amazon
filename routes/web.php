@@ -23,5 +23,10 @@ Route::get('/food-checkout', 'FoodBaby@checkout' );
 
 Route::get('/food-category', 'FoodBaby@category');
 
-route::get('/post','postscontroller@show');
-Route::get('/bananas', 'FoodBaby@description');
+Route::get('/post','postscontroller@show');
+Route::get('/bt', 'FoodBaby@description');
+
+Route::get('/save-data', [
+    'as' => 'save-data',
+    'uses' => 'savedata@saveData'
+]);
