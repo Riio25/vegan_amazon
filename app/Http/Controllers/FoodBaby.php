@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Food;
 use Illuminate\Http\Request;
 
 class FoodBaby extends Controller
@@ -26,6 +27,17 @@ class FoodBaby extends Controller
             'post' => $post->product_name,
             'description' => $post->product_description
         ]);
+    }
+
+    public function stock(){
+
+        $stock = Food::all();
+
+        return view('food-category', [
+            'stock' => $stock
+        ]);
+
+
     }
 
 

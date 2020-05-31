@@ -5,10 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Data Altered</title>
 </head>
 <body>
-<h1>Your data was entered.</h1>
+<h1>Your data was {{ $value }}.</h1>
+
+<div>
+    <a href="{{url('/bt')}}">Return</a>
+</div>
 
 </body>
 </html>

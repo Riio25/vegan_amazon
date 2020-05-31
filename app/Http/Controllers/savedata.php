@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Food;
 
 
 class savedata extends Controller
@@ -18,6 +19,37 @@ class savedata extends Controller
 
         DB::table('food_category')->insert($data);
 
-        return view('test');
+        return view('test',[
+            'value' => 'entered successfully'
+        ]);
     }
+
+    public function deleteData(Request $request){
+        $product_name = $request->input('deleted');
+        Food::where('product_name', $product_name)->delete();
+
+        return view('test', [
+            'value' => 'deleted successfully'
+        ]);
+
+    }
+
+    public function updateData(Request $request){
+        $product_name = $request->input('product_name');
+        $price = $request->input('price');
+        $description = $request->input('description');
+
+       $data = [
+           'product_name' => $product_name,
+           'price' => $price,
+           'product_description' => $description
+       ];
+        Food::where('product_name', $product_name)->update($data);
+
+        return view('test', [
+            'value' => 'updated successfully'
+        ]);
+    }
+
+
 }

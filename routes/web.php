@@ -25,8 +25,24 @@ Route::get('/food-category', 'FoodBaby@category');
 
 Route::get('/post','postscontroller@show');
 Route::get('/bt', 'FoodBaby@description');
+Route::get('/bt', 'FoodBaby@stock');
 
 Route::get('/save-data', [
     'as' => 'save-data',
     'uses' => 'savedata@saveData'
+]);
+
+Route::get('/update-data', [
+    'as' => 'update-data',
+    'uses' => 'savedata@updatedata'
+]);
+
+Route::get('/delete-data', [
+    'as' => 'delete-data',
+    'uses' => 'savedata@deleteData'
+]);
+
+Route::get('/stock', [
+    'as' => 'stock',
+    'uses' => 'FoodBaby@stock'
 ]);
