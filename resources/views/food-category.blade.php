@@ -34,7 +34,7 @@
     <h3>Our current stock is:</h3>
     <p>
         @foreach ($stock as $stocks)
-        <li>{{ $stocks->product_name }}</li>
+        <li>{{ $stocks->product_name }}: ${{$stocks->price}}</li>
         @endforeach
     </p>
 </div>

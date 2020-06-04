@@ -17,7 +17,7 @@ class savedata extends Controller
 
         $data = array('product_name'=>$product_name, 'price' => $price, 'product_description'=>$product_description);
 
-        DB::table('food_category')->insert($data);
+        Food::insert($data);
 
         return view('test',[
             'value' => 'entered successfully'
