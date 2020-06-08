@@ -29,20 +29,29 @@ Route::get('/bt', 'FoodBaby@stock');
 
 Route::get('/save-data', [
     'as' => 'save-data',
-    'uses' => 'savedata@saveData'
+    'uses' => 'DataController@saveData'
 ]);
 
 Route::get('/update-data', [
     'as' => 'update-data',
-    'uses' => 'savedata@updatedata'
+    'uses' => 'DataController@updatedata'
 ]);
 
 Route::get('/delete-data', [
     'as' => 'delete-data',
-    'uses' => 'savedata@deleteData'
+    'uses' => 'DataController@deleteData'
 ]);
 
 Route::get('/stock', [
     'as' => 'stock',
     'uses' => 'FoodBaby@stock'
+]);
+
+Route::get('/clothing', 'ClothingController@clothing');
+Route::get('/clothing-admin', 'ClothingController@clothingadmin');
+Route::get('clothing/{slug}', 'ClothingController@display');
+
+Route::get('/updateadmin', [
+    'as' => 'updateclothing',
+    'uses' => 'ClothingController@stock'
 ]);

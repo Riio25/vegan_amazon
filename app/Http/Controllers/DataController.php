@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Food;
 
 
-class savedata extends Controller
+class dataController extends Controller
 {
 
     public function saveData(Request $request){
@@ -39,11 +39,11 @@ class savedata extends Controller
         $price = $request->input('price');
         $description = $request->input('description');
 
-       $data = [
-           'product_name' => $product_name,
-           'price' => $price,
-           'product_description' => $description
-       ];
+        $data = [
+            'product_name' => $product_name,
+            'price' => $price,
+            'product_description' => $description
+        ];
         Food::where('product_name', $product_name)->update($data);
 
         return view('test', [
