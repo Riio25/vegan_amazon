@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodBaby;
+use App\Clothing;
+use App\clothing_category;
 
 
 /*
@@ -55,3 +57,8 @@ Route::get('/updateadmin', [
     'as' => 'updateclothing',
     'uses' => 'ClothingController@stock'
 ]);
+
+Route::get('/user', function(){
+    $clothing = Clothing::all()->clothing_category;
+    return $clothing;
+});
