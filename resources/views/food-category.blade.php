@@ -59,7 +59,7 @@
 </div>
 <div>
     <h2>Delete:</h2>
-    <form action="{{route('delete-data')}}" method=""get>
+    <form action="{{route('delete-data')}}" method="get">
         <label for="fruits">What stock should be removed?</label>
         <br>
         <input type="text" name="deleted">

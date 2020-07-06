@@ -62,3 +62,13 @@ Route::get('/user', function(){
     $clothing = Clothing::all()->clothing_category;
     return $clothing;
 });
+
+Route::get('/foods', [
+    'as' => 'post',
+    'uses' => 'FoodController@show'
+]);
+
+Route::get('/category/{categoryName}', [
+    'as'=> 'categoryName',
+    'uses' =>'FoodController@showCategory']
+);
