@@ -11,7 +11,10 @@
 <h1>Your data was {{ $value }}.</h1>
 
 <div>
-    <a href="{{url('/bt')}}">Return</a>
+    <a href="{{url('/bt')}}">Initial CRUD</a>
+</div>
+<div>
+    <a href="{{url('/foods')}}">Category CRUD</a>
 </div>
 
 </body>

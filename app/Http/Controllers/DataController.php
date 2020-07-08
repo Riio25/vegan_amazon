@@ -51,5 +51,34 @@ class dataController extends Controller
         ]);
     }
 
+    public function saveDataFood(Request $request){
+        $product = $request->input('item');
+        $product_category = $request->input('category');
+        $product_color = $request->input('color');
+        $product_price = $request->input('price');
+
+        $data = array('category' => $product_category, 'color'=>$product_color, 'item'=>$product, 'price'=>$product_price);
+
+        Food::Insert($data);
+        return view('test', [
+            'value' => 'created successfully'
+        ]);
+    }
+
+    public function updateDataFood(Request $request){
+        $product = $request->input();
+        $product_category = $request->input('category');
+        $product_color = $request->input('color');
+        $product_price = $request->input('price');
+
+        $data = array('category' => $product_category, 'color'=>$product_color, 'item'=>$product, 'price'=>$product_price);
+        dd($product);
+        Food::where('item', $product)->update($data);
+
+        return view('test',[
+            'value'=>'updated successfully'
+        ]);
+    }
+
 
 }

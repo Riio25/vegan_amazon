@@ -33,10 +33,18 @@ Route::get('/save-data', [
     'as' => 'save-data',
     'uses' => 'DataController@saveData'
 ]);
+Route::get('/save-data-foods',[
+    'as'=> 'save-data-foods',
+    'uses'=> 'DataController@saveDataFood'
+]);
 
 Route::get('/update-data', [
     'as' => 'update-data',
     'uses' => 'DataController@updatedata'
+]);
+Route::get('/update-data-foods', [
+    'as'=>'update-data-foods',
+    'uses'=>'DataController@updateDataFood'
 ]);
 
 Route::get('/delete-data', [
