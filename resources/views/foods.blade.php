@@ -10,7 +10,7 @@
 <body>
     @foreach($post as $posts)
         <li>Food: {{$posts->item}}</li>
-        <ul>Category: {{$posts->category}}, {{$posts->color}}</ul>
+        <ul>Category: {{$posts->category}}, {{$posts->foodcolor}}</ul>
     @endforeach
 
     <span>Add Entry:</span>
@@ -31,8 +31,8 @@
 
     <span>Update an Entry:</span>
     <br>
-    <form method="get">
-        <select name="update" id="update">
+    <form method="get" action="{{route('update-data-foods')}}">
+        <select name="update">
             <option value="0">Select an Item</option>
             @foreach($post as $posts)
                 <option value="{{$posts->item}}">{{$posts->item}}</option>
@@ -45,8 +45,7 @@
         <br>
         <input type="text" name="price" placeholder="Please enter a price for the item.">
         <br>
-        <button type="submit" name="update" formaction="{{route('update-data-foods')}}">Update</button>
-        <button type="submit" name="delete" formaction="">Delete</button>
+        <input type="submit" value="Update">
     </form>
 </body>
 </html>

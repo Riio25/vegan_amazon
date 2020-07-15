@@ -80,3 +80,5 @@ Route::get('/category/{categoryName}', [
     'as'=> 'categoryName',
     'uses' =>'FoodController@showCategory']
 );
+
+Route::get('/books', 'BooksController@show');

@@ -41,6 +41,15 @@ class FoodAndFoodCategoryTables extends Migration
      */
     public function down()
     {
-        //
+        schema::create('food_category', function (Blueprint $table){
+            $table->id();
+            $table->string('product_name');
+            $table->integer('price');
+            $table->string('product_description');
+        });
+
+        schema::drop('food');
+        schema::drop('food_category');
+        schema::drop('food_color');
     }
 }

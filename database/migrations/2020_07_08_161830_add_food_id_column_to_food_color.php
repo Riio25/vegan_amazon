@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddClothingIdColumn extends Migration
+class AddFoodIdColumnToFoodColor extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddClothingIdColumn extends Migration
      */
     public function up()
     {
-        Schema::table('clothing_categories', function (Blueprint $table){
-            $table->bigInteger('clothing_id');
+        Schema::table('food_color', function (Blueprint $table) {
+            $table->foreignId('food_id')->after('id');
         });
     }
 
@@ -25,8 +25,8 @@ class AddClothingIdColumn extends Migration
      */
     public function down()
     {
-        Schema::table('clothing_categories', function (Blueprint $table){
-            $table->dropColumn('clothing_id');
+        Schema::table('food_color', function (Blueprint $table) {
+            $table->dropColumn('food_id');
         });
     }
 }

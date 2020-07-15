@@ -66,13 +66,12 @@ class dataController extends Controller
     }
 
     public function updateDataFood(Request $request){
-        $product = $request->input();
+        $product = $request->input('update');
         $product_category = $request->input('category');
         $product_color = $request->input('color');
         $product_price = $request->input('price');
 
         $data = array('category' => $product_category, 'color'=>$product_color, 'item'=>$product, 'price'=>$product_price);
-        dd($product);
         Food::where('item', $product)->update($data);
 
         return view('test',[

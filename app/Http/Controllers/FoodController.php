@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Food;
+use App\FoodColor;
 use Illuminate\Http\Request;
 
 class FoodController extends Controller
@@ -10,8 +11,10 @@ class FoodController extends Controller
     public function show(){
 
         $post = Food::all();
+        $colors = FoodColor::all();
         return view('foods', [
-            'post' => $post
+            'post' => $post,
+            'colors' => $colors
         ]);
     }
 
