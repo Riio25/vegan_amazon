@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\book;
+use App\Model\Book;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
 {
     public function show(){
-        $books = book::all();
+        $books = Book::all();
 //        $authors = author::all();
 //        $genres = book::genres();
 
         return view('books', [
-            'book' => $books
+            'books' => $books
 //            'author' => $authors,
 //            'genres' => $genres
         ]);

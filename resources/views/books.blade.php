@@ -10,9 +10,9 @@
 <body>
 <div>
     <p>
-        @foreach($book as $books)
-            <li>{{ $books->title }} by {{ $books->author_id }}</li>
-            <p>Cost: {{$books->price}}</p>
+        @foreach($books as $book)
+            <li>{{ $book->title }} by {{ $book->author->author }}</li>
+            <p>Cost: ${{$book->price}}</p>
         @endforeach
     </p>
 </div>
