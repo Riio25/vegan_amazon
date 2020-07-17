@@ -10,6 +10,6 @@ class Book extends Model
         return $this->hasOne(Author::class, 'id', 'author_id');
     }
     public function genre(){
-        return $this->hasOne(Genre::class);
+        return $this->hasOne(Genre::class, 'id', 'genre_id');
     }
 }
