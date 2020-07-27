@@ -8,16 +8,59 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Styles -->
     <style>
         html, body {
-            background-color: #fff;
-            color: #636b6f;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
+        }
+        .view {
+            width: 100%;
+        }
+        div > span:nth-child(-n+2) {
+            display: inline;
+            padding-top: 20px;
+            margin-left: 10px;
+            margin-right: 60px;
+        }
+        .top-bar{
+            background-color: #131A22;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            color: black;
+            padding: 75px;
+        }
+        .boxes4 {
+            border: solid 1px black;
+            margin: 0 15px;
+        }
+        #myBoxes {
+            height: 1080px;
+            width: 720px;
+            margin: auto;
+        }
+        .bodies{
+            padding-bottom: 70px;
+        }
+        input {
+            display: inline;
+            width: 450px;
+        }
+        .borders {
+            background-color: #FF9900;
+            color: black;
+            padding: 5px;
+        }
+        .navish {
+            background-color: #232F3E;
+            color: white;
         }
 
         .full-height {
@@ -49,8 +92,8 @@
         }
 
         .links > a {
-            color: #636b6f;
-            padding: 0 25px;
+
+            padding: 0 5px;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: .1rem;
