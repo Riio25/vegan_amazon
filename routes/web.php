@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/alt', function(){
+    return view('alternate');
+});
+
 Route::get('/food-checkout', 'FoodBaby@checkout' );
 
 Route::get('/food-category', 'FoodBaby@category');
