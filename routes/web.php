@@ -85,4 +85,12 @@ Route::get('/category/{categoryName}', [
     'uses' =>'FoodController@showCategory']
 );
 
-Route::get('/books', 'BooksController@show');
+Route::get('/books', [
+    'as'=> 'books',
+    'uses'=>'BooksController@show']
+);
+
+Route::get('/checkout', [
+    'as' => 'checkout',
+    'uses' => 'OrdersController@checkoutpage'
+]);
