@@ -118,6 +118,9 @@
             margin: 10px 25px;
         }
     </style>
+
+    @yield('css')
+
 </head>
 <body>
     @yield ('content')
