@@ -68,6 +68,61 @@
                 </div>
             </div>
         </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-8">
+                <form style="border:2px black solid; padding:5px;">
+                    <div class="form-group">
+                        <label for="inputCC">Credit Card Number</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label for="dropdownExp">Exp.</label>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="option1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Month
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="option1">
+                                    <li><a href="">1</a></li>
+                                    <li><a href="">2</a></li>
+                                    <li><a href="">3</a></li>
+                                    <li><a href="">4</a></li>
+                                    <li><a href="">5</a></li>
+                                    <li><a href="">6</a></li>
+                                    <li><a href="">7</a></li>
+                                    <li><a href="">8</a></li>
+                                    <li><a href="">9</a></li>
+                                    <li><a href="">10</a></li>
+                                    <li><a href="">11</a></li>
+                                    <li><a href="">12</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="option2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Year
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="option2">
+                                    <li><a href="">2021</a></li>
+                                    <li><a href="">2022</a></li>
+                                    <li><a href="">2023</a></li>
+                                    <li><a href="">2024</a></li>
+                                    <li><a href="">2025</a></li>
+                                    <li><a href="">2026</a></li>
+                                    <li><a href="">2027</a></li>
+                                    <li><a href="">2028</a></li>
+                                    <li><a href="">2029</a></li>
+                                    <li><a href="">2030</a></li>
+                                    <li><a href="">2031</a></li>
+                                    <li><a href="">2032</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-12">
                 <h2 id="confirmationNumber">Your Confirmation Number is: <span id="x"></span></h2>
