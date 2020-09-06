@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Food;
-use App\FoodColor;
+use App\Model\Food;
+use App\Model\FoodColor;
 use Illuminate\Http\Request;
 
 class FoodController extends Controller

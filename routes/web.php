@@ -94,3 +94,8 @@ Route::get('/checkout', [
     'as' => 'checkout',
     'uses' => 'OrdersController@checkoutpage'
 ]);
+
+Route::post('/place-order', [
+    'as'=> 'place',
+    'uses'=>'CheckoutController@placeOrder'
+]);
