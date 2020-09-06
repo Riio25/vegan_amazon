@@ -115,7 +115,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <button class="btn btn-danger" style="margin-left: 35px; margin-top: 20px;" onclick="confirmation()">Place Order</button>
+                    <button class="btn btn-primary" style="margin-left: 35px; margin-top: 20px;" onclick="confirmation()">Place Order</button>
                 </div>
             </div>
         </form>
