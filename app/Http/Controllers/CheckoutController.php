@@ -8,6 +8,15 @@ class CheckoutController extends Controller
 {
     public function placeOrder(Request $request){
 
+        $validatedData = $request->validate([
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required',
+            'CCNumber' => 'required'
+        ]);
+
         $name = $request->firstName;
         $address = $request->streetAddress . ', ' . $request->city . ', ' . $request->state . ', ' . $request->zip;
         $item = $request->item;
