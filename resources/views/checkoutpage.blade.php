@@ -26,6 +26,8 @@
         @endif
         <form action="{{route('place')}}" method="POST">
             @csrf
+
+            <input type="hidden" name="item" value="{{$id}}">
             <div class="row">
                 <div class="col-sm-6" style="border: black 5px solid; padding: 5px; background-color:lightgrey;">
                     <div class="form-inline" >
@@ -65,9 +67,8 @@
                 <div class="col-sm-6">
                     <div style="border: 4px black solid; padding:5px;">
                         <ul style="list-style-type: none;">
-{{--                         // how to send title with the request data--}}
-                            <li name="item">Title: How to Code for Dummies</li>
-                            <li>Price: $10</li>
+                            <li>Title: {{$item}}</li>
+                            <li id="price">Price: ${{$price}}</li>
                             <li>Upgrades: $2</li>
                             <li>Subtotal: $12</li>
                             <hr>
@@ -89,6 +90,7 @@
                     <div class="form-group form-inline">
                         <label for="expMonth">Month</label>
                         <select name="expMonth" id="" class="form-control">
+                            <option>Month</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -104,6 +106,7 @@
                         </select>
                         <label for="expYr">Year</label>
                         <select class="form-control" name="expYear" id="">
+                            <option>Year</option>
                             <option value="2020">2020</option>
                             <option value="2021">2021</option>
                             <option value="2022">2022</option>
@@ -124,10 +127,23 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <button class="btn btn-primary" style="margin-left: 35px; margin-top: 20px;" onclick="confirmation()">Place Order</button>
+                    <button class="btn btn-primary" style="margin-left: 35px; margin-top: 20px;">Place Order</button>
                 </div>
             </div>
         </form>
     </div>
+
+{{--    Trying to add actual item price to receive real total.--}}
+<script>
+    $(document).ready(function(){
+
+        var test = parseInt($('#price'));
+
+        console.log(test);
+
+    })
+
+
+</script>
 
 @endsection
