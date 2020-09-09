@@ -8,7 +8,7 @@ use App\Model\Book;
 class OrdersController extends Controller
 {
     public function checkoutpage(){
-        $book = Book::all()->where('id', '14');
+        $book = Book::all()->where('id', '2');
 
         $id = $book[1]->id;
         $name = $book[1]->title;

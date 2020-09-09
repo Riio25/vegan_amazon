@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodBaby;
 use App\Clothing;
@@ -99,3 +100,7 @@ Route::post('/place-order', [
     'as'=> 'place',
     'uses'=>'CheckoutController@placeOrder'
 ]);
+
+Route::get('/order-confirmation/{order_number}', function($order_number){
+   return $order_number;
+});

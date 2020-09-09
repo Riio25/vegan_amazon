@@ -38,12 +38,20 @@ class CheckoutController extends Controller
         $orders->status = 'New';
         $orders->save();
 
-        return view('order-confirmation',[
-            'name' => $name,
-            'address' => $address,
-            'item' => $itemTitle,
-            'ordernumber' => $ordernum
-        ]);
+//        return view('order-confirmation',[
+//            'name' => $name,
+//            'address' => $address,
+//            'item' => $itemTitle,
+//            'ordernumber' => $ordernum
+//        ]);
+
+        return response()->json(
+            [
+                'message' => 'here is a message',
+                'status' => 'All good',
+                'ordernumber' => $ordernum
+            ],
+            200);
     }
 
     private function createNextOrderNumber(){

@@ -127,7 +127,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <button class="btn btn-primary" style="margin-left: 35px; margin-top: 20px;">Place Order</button>
+                    <button id="my-button" class="btn btn-primary" style="margin-left: 35px; margin-top: 20px;">Place Order</button>
                 </div>
             </div>
         </form>
@@ -140,6 +140,43 @@
         var test = parseInt($('#price'));
 
         console.log(test);
+
+        $('#my-button').click(function (event){
+           event.preventDefault();
+           console.log('my button was clicked');
+            $('#my-button').text('Order submitting...').css('background-color', 'grey');
+
+            var fname = $('input[name="firstName"]').val();
+            console.log(fname);
+            if( fname == '') {
+                $('input[name="firstName"]').css('border', '1px solid red')
+            } else {
+                $('input[name="firstName"]').css('border', '1px solid green')
+            }
+
+            $.ajax({
+                method: "POST",
+                url: "/place-order",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    'firstName': 'Hiro',
+                    'lastName': 'Yuki',
+                    'streetAddress': 'required',
+                    'city': 'required',
+                    'state': 'required',
+                    'zip': 'required',
+                    'CCNumber': 'required',
+                    'item': '2'
+                }
+            }).done(function(data) {
+                console.log('ajax is done')
+                console.log(data.ordernumber)
+                window.location.href = '/order-confirmation/'+data.ordernumber
+            });
+
+        });
 
     })
 
