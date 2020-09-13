@@ -27,35 +27,35 @@
         <form action="{{route('place')}}" method="POST">
             @csrf
 
-            <input type="hidden" name="item" value="{{$id}}">
+            <input type="hidden" id="item" name="item" value="{{$id}}">
             <div class="row">
                 <div class="col-sm-6" style="border: black 5px solid; padding: 5px; background-color:lightgrey;">
                     <div class="form-inline" >
                         <div class="form-group">
-                            <label for="inputFirstName">First Name</label>
+                            <label id="submit_first_name" for="inputFirstName">First Name</label>
                             <input type="text" name="firstName" class="form-control" placeholder="First Name">
                         </div>
                         <div class="form-group">
-                            <label for="inputLastName">Last Name</label>
+                            <label id="submit_last_name" for="inputLastName">Last Name</label>
                             <input type="text" name="lastName" class="form-control" placeholder="Last Name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">Address</label>
-                        <input type="text" name="streetAddress" class="form-control" placeholder="Address">
+                        <input type="text" id="address" name="streetAddress" class="form-control" placeholder="Address">
                     </div>
                     <div class="form-inline">
                         <div class="form-group">
                             <label for="inputCity">City</label>
-                            <input type="text" name="city" class="form-control" placeholder="City">
+                            <input type="text" id="city" name="city" class="form-control" placeholder="City">
                         </div>
                         <div class="form-group">
                             <label for="inputState">State</label>
-                            <input type="text" name="state" class="form-control" placeholder="State">
+                            <input type="text" id="state" name="state" class="form-control" placeholder="State">
                         </div>
                         <div class="form-group">
                             <label for="inputZip">Zip</label>
-                            <input type="text" name="zip" placeholder="Zip" class="form-control">
+                            <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control">
                         </div>
                     </div>
                     <div class="checkbox" style="border: black 1px solid; padding-right: -20px;">
@@ -127,7 +127,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <button class="btn btn-primary" style="margin-left: 35px; margin-top: 20px;">Place Order</button>
+                    <button id="place-order" class="btn btn-primary" style="margin-left: 35px; margin-top: 20px;">Place Order</button>
                 </div>
             </div>
         </form>
@@ -139,7 +139,29 @@
 
         var test = parseInt($('#price'));
 
-        console.log(test);
+        $('#place-order').on('click', function(event){
+            event.preventDefault(event);
+
+            $.ajax({
+                url: '/place',
+                method: 'POST',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+                },
+                data: {
+                    "firstName": $('#submit_first_name').val(),
+                    "lastName": $('#submit_last_name').val(),
+                    "streetAddress": $('#address').val(),
+                    "city": $('#city').val(),
+                    "state": $('#state').val(),
+                    "zip": $('#zip').val(),
+                    "item": $('#item').val()
+                }
+            })
+            .done(function(data){
+            console.log(data);
+            });
+        });
 
     })
 

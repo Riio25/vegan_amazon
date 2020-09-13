@@ -99,3 +99,5 @@ Route::post('/place-order', [
     'as'=> 'place',
     'uses'=>'CheckoutController@placeOrder'
 ]);
+
+Route::post('/order-confirmation/{ordernumber}')
