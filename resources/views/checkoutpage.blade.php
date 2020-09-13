@@ -143,7 +143,7 @@
             event.preventDefault(event);
 
             $.ajax({
-                url: '/place',
+                url: 'place',
                 method: 'POST',
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
@@ -159,7 +159,7 @@
                 }
             })
             .done(function(data){
-            console.log(data);
+                window.location.href = "/order-confirmation/" + data.ordernumber
             });
         });
 

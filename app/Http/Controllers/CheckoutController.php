@@ -26,6 +26,7 @@ class CheckoutController extends Controller
 //        $item = DB::table('books')->where('id', $request->item)->first();
         $item = Book::where('id', $request->item)->first();
         $itemTitle = $item->title;
+        $price = $item->price;
 
         $ordernum = $this->createNextOrderNumber();
 
@@ -38,12 +39,22 @@ class CheckoutController extends Controller
         $orders->status = 'New';
         $orders->save();
 
-        return view('order-confirmation',[
-            'name' => $name,
-            'address' => $address,
-            'item' => $itemTitle,
-            'ordernumber' => $ordernum
-        ]);
+//        return view('order-confirmation',[
+//            'name' => $name,
+//            'address' => $address,
+//            'item' => $itemTitle,
+//            'ordernumber' => $ordernum
+//        ]);
+
+        return response()->json(
+            [
+                "ordernumber"=> $ordernum,
+                "name"=> $request->firstName,
+                "item"=> $itemTitle,
+                "price" => $price,
+                "address"=> $address
+            ]
+        );
     }
 
     private function createNextOrderNumber(){
