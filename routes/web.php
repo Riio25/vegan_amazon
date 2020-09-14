@@ -90,7 +90,7 @@ Route::get('/books', [
     'uses'=>'BooksController@show']
 );
 
-Route::get('/checkout', [
+Route::get('/checkout/{id}', [
     'as' => 'checkout',
     'uses' => 'OrdersController@checkoutpage'
 ]);

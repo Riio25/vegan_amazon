@@ -32,9 +32,7 @@
             margin-left: 10px;
             margin-right: 60px;
         }
-        .minus{
-            margin-top: -75px;
-        }
+
         img{
             z-index: -1;
         }

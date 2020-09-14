@@ -8,10 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class OrdersController extends Controller
 {
-    public function checkoutpage(){
-        $book = Book::all()->where('id', '15')->first();
-
-
+    public function checkoutpage($id){
+        $book = Book::all()->where('id', $id)->first();
 
         $id = $book->id;
         $name = $book->title;
