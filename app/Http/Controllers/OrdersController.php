@@ -4,19 +4,34 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Book;
+use Illuminate\Support\Facades\DB;
 
 class OrdersController extends Controller
 {
     public function checkoutpage(){
-        $book = Book::all()->where('id', '14');
+        $book = Book::all()->where('id', '15')->first();
 
-        $id = $book[1]->id;
-        $name = $book[1]->title;
+
+
+        $id = $book->id;
+        $name = $book->title;
 
         return view('checkoutpage', [
             'id' => $id,
             'item' => $name,
-            'price' => $book[1]->price
+            'price' => $book->price
+        ]);
+    }
+
+    public function orderConfirmation($ordernumber){
+        $order = DB::table('orders')->where('ordernumber', $ordernumber)->first();
+
+        return view('order-confirmation',[
+            'name'=>$order->first_name,
+            'address'=>$order->shipping_address,
+            'item'=>$order->product_name,
+            'price'=>$order->total_paid,
+            'ordernumber'=>$order->ordernumber
         ]);
     }
 }

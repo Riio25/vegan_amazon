@@ -100,12 +100,4 @@ Route::post('/place-order', [
     'uses'=>'CheckoutController@placeOrder'
 ]);
 
-Route::get('/order-confirmation/{ordernumber}', function($data){
-    return view('order-confirmation',[
-       'name'=>$data->name,
-       'address'=>$data->address,
-       'item'=>$data->item,
-       'price'=>$data->price,
-       'ordernumber'=>$data->ordernumber
-    ]);
-});
+Route::get('/order-confirmation/{ordernumber}', 'OrdersController@orderConfirmation');

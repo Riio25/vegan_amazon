@@ -35,17 +35,19 @@ class CheckoutController extends Controller
         $orders->first_name = $request->firstName;
         $orders->last_name = $request->lastName;
         $orders->product_name = $itemTitle;
+        $orders->total_paid = $request->totalPaid;
         $orders->shipping_address = $address;
         $orders->status = 'New';
         $orders->save();
 
+        //laravel form
 //        return view('order-confirmation',[
 //            'name' => $name,
 //            'address' => $address,
 //            'item' => $itemTitle,
 //            'ordernumber' => $ordernum
 //        ]);
-
+        //ajax
         return response()->json(
             [
                 "ordernumber"=> $ordernum,
