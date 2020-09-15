@@ -101,3 +101,17 @@ Route::post('/place-order', [
 ]);
 
 Route::get('/order-confirmation/{ordernumber}', 'OrdersController@orderConfirmation');
+
+// Admin Routes
+
+Route::prefix('admin/')->group(function(){
+
+    Route::get('home', 'AdminHomePageController@show');
+
+    Route::get('orders', 'OrdersController@showOrderHistory');
+
+    Route::get('order/{ordernumber}', 'OrdersController@showDetails');
+
+    Route::post('order/cancel-order', 'OrdersController@cancelOrder');
+
+});

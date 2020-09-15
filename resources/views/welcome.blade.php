@@ -1,5 +1,9 @@
 @extends ('layout')
 
+@section('page-title')
+    <title>Vegan-Amazon</title>
+@endsection
+
 @section('content')
 
     <div class="container-fluid">
@@ -20,7 +24,7 @@
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/admin/home">Admin</a>
                 </div>
             </div>
         </div>

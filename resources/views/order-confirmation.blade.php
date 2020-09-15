@@ -13,7 +13,6 @@
                 <p>You will be charged ${{$price}}.</p>
                 <p>Your order will be shipped to {{$address}}.</p>
                 <p>Your Order Confirmation Number is: {{$ordernumber}}</p>
-
             </div>
 
             <div>

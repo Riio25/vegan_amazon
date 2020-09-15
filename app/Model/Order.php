@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use App\Model\Book;
 use Illuminate\Database\Eloquent\Model;
@@ -12,4 +12,6 @@ class Order extends Model
     public function books(){
         return $this->hasMany(Book::class);
     }
+
+
 }

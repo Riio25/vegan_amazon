@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Book;
-use App\Order;
+use App\Model\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -35,6 +35,7 @@ class CheckoutController extends Controller
         $orders->first_name = $request->firstName;
         $orders->last_name = $request->lastName;
         $orders->product_name = $itemTitle;
+        $orders->product_type = 'Book';
         $orders->total_paid = $request->totalPaid;
         $orders->shipping_address = $address;
         $orders->status = 'New';
@@ -51,10 +52,6 @@ class CheckoutController extends Controller
         return response()->json(
             [
                 "ordernumber"=> $ordernum,
-                "name"=> $request->firstName,
-                "item"=> $itemTitle,
-                "price" => $price,
-                "address"=> $address
             ]
         );
     }
