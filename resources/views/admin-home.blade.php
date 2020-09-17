@@ -10,30 +10,25 @@
             <h1>Admin Home</h1>
         </div>
         <div class="row">
-            <div class="col-md-4" style="border:1px solid black; background-color: lightgrey;">
-                <div class="header">
-                    <h3><u>Customer</u></h3>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Welcome to Vegan-Amazon Admin</div>
+                <div class="panel-body">
+                    <div class="list-group col-xs-6">
+                        <a href="#" class="list-group-item active">Customer</a>
+                        <a href="#" class="list-group-item list-group-item-action">Customers</a>
+                        <a href="/admin/orders" class="list-group-item list-group-item-action">Orders</a>
+                        <a href="#" class="list-group-item list-group-item-action">Promotion Manager</a>
+                    </div>
+                    <div class="list-group col-xs-6">
+                        <a href="#" class="list-group-item active">Inventory</a>
+                        <a href="#" class="list-group-item list-group-item-action">Books</a>
+                        <a href="#" class="list-group-item list-group-item-action">Food</a>
+                        <a href="#" class="list-group-item list-group-item-action">Clothing</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="">Customers</a>
-                </div>
-                <div>
-                    <a href="/admin/orders">Orders</a>
-                </div>
-                <div>
-                    <a href="">Promos</a>
-                </div>
+
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4" style="border: 1px solid black; background-color: lightgrey">
-                <div class="header">
-                    <h3><u>Inventory</u></h3>
-                </div>
-                <div>
-                    <a href="">Books</a>
-                </div>
-                <div> <a href="">Food</a></div>
-                <div><a href="">Clothing</a></div>
 
             </div>
         </div>
