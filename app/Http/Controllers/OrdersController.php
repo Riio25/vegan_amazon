@@ -6,6 +6,7 @@ use App\Model\Order;
 use Illuminate\Http\Request;
 use App\Model\Book;
 use Illuminate\Support\Facades\DB;
+use test\Mockery\AllowsExpectsSyntaxTest;
 
 class OrdersController extends Controller
 {
@@ -14,11 +15,15 @@ class OrdersController extends Controller
 
         $id = $book->id;
         $name = $book->title;
+        $prices = $this->calculateTotalPrice($book);
 
         return view('checkoutpage', [
             'id' => $id,
             'item' => $name,
-            'price' => $book->price
+            'price' => $book->price,
+            'total_price' => $prices[0],
+            'subtotal' => $prices[1],
+            'tax' => $prices[2]
         ]);
     }
 
@@ -62,5 +67,17 @@ class OrdersController extends Controller
         $order->save();
 
         return response()->json($order);
+    }
+
+    public function calculateTotalPrice($book){
+//        bookprice + shipping * Tax
+
+        $subtotal = $book->price + 9.99;
+        $tax =  number_format(round($subtotal *.07, 2), 2);
+        $total = $subtotal + $tax;
+
+        return [$total, $subtotal, $tax];
+
+
     }
 }

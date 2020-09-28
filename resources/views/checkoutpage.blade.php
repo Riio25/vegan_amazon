@@ -68,10 +68,10 @@
                             <li>Title: {{$item}}</li>
                             <li>Price: $<span id="price">{{$price}}</span></li>
                             <li>Shipping: $<span id="shipping">9.99</span></li>
-                            <li>Subtotal: $<span id="subtotal"></span></li>
+                            <li>Subtotal: $<span id="subtotal">{{$subtotal}}</span></li>
                             <hr>
-                            <li>Tax: $<span id="tax"></span></li>
-                            <li>Total: $<span id="totalPaid"></span></li>
+                            <li>Tax: $<span id="tax">{{$tax}}</span></li>
+                            <li>Total: $<span id="totalPaid">{{$total_price}}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -136,18 +136,18 @@
     $(document).ready(function(){
 
         $('#errors').css('visibility', 'hidden');
-        var price = $('#price').text();
-        var shipping = $('#shipping').text();
-
-        var subtotal = parseFloat(price) + parseFloat(shipping);
-
-        $('#subtotal').text(subtotal.toFixed(2));
-        var tax = subtotal * .07;
-
-        $('#tax').text(tax.toFixed(2));
-
-        var totalpaid = tax + subtotal;
-        $('#totalPaid').text(totalpaid.toFixed(2));
+        // var price = $('#price').text();
+        // var shipping = $('#shipping').text();
+        //
+        // var subtotal = parseFloat(price) + parseFloat(shipping);
+        //
+        // $('#subtotal').text(subtotal.toFixed(2));
+        // var tax = subtotal * .07;
+        //
+        // $('#tax').text(tax.toFixed(2));
+        //
+        // var totalpaid = tax + subtotal;
+        // $('#totalPaid').text(totalpaid.toFixed(2));
 
 
 

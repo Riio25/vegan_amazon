@@ -10,7 +10,6 @@
             <h1>Admin Home</h1>
         </div>
         <div class="row">
-
             <div class="panel panel-default">
                 <div class="panel-heading">Welcome to Vegan-Amazon Admin</div>
                 <div class="panel-body">
@@ -27,12 +26,10 @@
                         <a href="#" class="list-group-item list-group-item-action">Clothing</a>
                     </div>
                 </div>
-
-            </div>
-
             </div>
         </div>
     </div>
+
 
 
 @endsection
